@@ -1,0 +1,15 @@
+G:\DOTNET project\TaskStatusUpdates\bin\Debug\net8.0\TaskStatusUpdates.exe
+G:\DOTNET project\TaskStatusUpdates\bin\Debug\net8.0\TaskStatusUpdates.deps.json
+G:\DOTNET project\TaskStatusUpdates\bin\Debug\net8.0\TaskStatusUpdates.runtimeconfig.json
+G:\DOTNET project\TaskStatusUpdates\bin\Debug\net8.0\TaskStatusUpdates.dll
+G:\DOTNET project\TaskStatusUpdates\bin\Debug\net8.0\TaskStatusUpdates.pdb
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.GeneratedMSBuildEditorConfig.editorconfig
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.AssemblyInfoInputs.cache
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.AssemblyInfo.cs
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.csproj.CoreCompileInputs.cache
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.sourcelink.json
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.dll
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\refint\TaskStatusUpdates.dll
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.pdb
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.genruntimeconfig.cache
+G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\ref\TaskStatusUpdates.dll
