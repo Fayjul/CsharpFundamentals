@@ -2,6 +2,7 @@
 {
     static void Main(string[] args)
     {
+        /*
         MyTask myTask = new MyTask("Complete Assignment");
         MyTask myTask1 = new MyTask("Prepare Presentation");
 
@@ -14,8 +15,13 @@
 
         myTask1.UpdateStatus("In Progress");
         myTask1.UpdateStatus("On Hold");
-        myTask1.UpdateStatus("Complete");
+        myTask1.UpdateStatus("Complete");*/
 
-        Console.ReadLine(); // Keep console open
+        TemperatureSensor temperatureSensor = new TemperatureSensor();
+        Notifier notifier = new Notifier();
+        notifier.SubscribeInTemparature(temperatureSensor);
+        temperatureSensor.SetTemparature(30);
+        temperatureSensor.SetTemparature(40);
+        Console.ReadLine();
     }
 }
