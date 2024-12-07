@@ -27,7 +27,7 @@ class Program
     }
 }
 */
-
+/*
 class Delegate
 {
     public delegate int DoMath(int a, int b);
@@ -40,5 +40,50 @@ class Delegate
         Delegate del = new Delegate();
         DoMath adding = new DoMath(del.AddTwoNumber);
         Console.WriteLine(adding(1, 2));
+    }
+}
+*/
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Button button = new Button();
+        Listener listener = new Listener();
+
+        // Subscribe the listener to the button's event
+        button.Clicked += listener.OnButtonClicked;
+
+        // Simulate button click
+        button.Click();
+        button.Click();
+
+        Console.ReadLine();
+    }
+}
+
+class Button
+{
+    // Declare the event using EventHandler (no custom arguments)
+    public event EventHandler Clicked;
+
+    public void Click()
+    {
+        Console.WriteLine("Button was clicked!");
+        OnClicked(); // Raise the event
+    }
+
+    protected virtual void OnClicked()
+    {
+        // Invoke the event if there are any subscribers
+        Clicked?.Invoke(this, EventArgs.Empty);
+    }
+}
+
+class Listener
+{
+    public void OnButtonClicked(object sender, EventArgs e)
+    {
+        Console.WriteLine("Listener: Button click event received!");
     }
 }
