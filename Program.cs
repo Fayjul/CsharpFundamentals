@@ -1,4 +1,5 @@
-﻿class Program
+﻿/*
+class Program
 {
     static void Main(string[] args)
     {
@@ -15,7 +16,7 @@
 
         myTask1.UpdateStatus("In Progress");
         myTask1.UpdateStatus("On Hold");
-        myTask1.UpdateStatus("Complete");*/
+        myTask1.UpdateStatus("Complete");/ // There is an multiline comment.
 
         TemperatureSensor temperatureSensor = new TemperatureSensor();
         Notifier notifier = new Notifier();
@@ -23,5 +24,21 @@
         temperatureSensor.SetTemparature(30);
         temperatureSensor.SetTemparature(40);
         Console.ReadLine();
+    }
+}
+*/
+
+class Delegate
+{
+    public delegate int DoMath(int a, int b);
+    public int AddTwoNumber(int a, int b)
+    {
+        return a + b;
+    }
+    public static void Main(string[] args)
+    {
+        Delegate del = new Delegate();
+        DoMath adding = new DoMath(del.AddTwoNumber);
+        Console.WriteLine(adding(1, 2));
     }
 }
