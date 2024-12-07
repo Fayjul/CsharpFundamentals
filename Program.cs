@@ -43,7 +43,7 @@ class Delegate
     }
 }
 */
-
+/*
 class Program
 {
     static void Main(string[] args)
@@ -87,3 +87,4 @@ class Listener
         Console.WriteLine("Listener: Button click event received!");
     }
 }
+*/
