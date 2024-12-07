@@ -1,4 +1,17 @@
-﻿/*
+﻿// Basic of linq
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] nums = [0, 1, 2, 3, 1];
+        var res = from a in nums where a < 3 orderby a select a + 3;
+        foreach (int i in res)
+            Console.WriteLine(i);
+    }
+}
+
+
+/*  // Delegates and Event
 class Program
 {
     static void Main(string[] args)
@@ -27,7 +40,7 @@ class Program
     }
 }
 */
-/*
+/* // Only Delegate
 class Delegate
 {
     public delegate int DoMath(int a, int b);
@@ -43,7 +56,7 @@ class Delegate
     }
 }
 */
-/*
+/*   // Only Event
 class Program
 {
     static void Main(string[] args)
