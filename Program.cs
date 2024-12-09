@@ -53,17 +53,26 @@ public class LinQExample
 }
 */
 // Deferred Execution in Lin Q
+
+/*
+LINQ queries are not executed when they are defined but when they are iterated over
+(e.g., using a foreach loop). This is called deferred execution.
+*/
 public class LinQExample
 {
     public static void Main(string[] args)
     {
-        int[] nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 3, 1];
+        int[] nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 3, 1]; // Query is not executed here
         var query = from num in nums where num > 3 select num;
         Console.WriteLine(query);
         foreach (int q in query)
         {
-            Console.WriteLine(q);
+            Console.WriteLine(q);// Query is executed here
         }
+
+        var queries = nums.Where(q => q > 2); // Query Executed Here. It's call Immediate Execution.
+
+        Console.WriteLine(queries);
 
     }
 }
