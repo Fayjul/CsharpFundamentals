@@ -1,5 +1,6 @@
 ﻿// Basic of linq
-public class HelloWorld
+/*
+public class LinQExample
 {
     public static void Main(string[] args)
     {
@@ -9,7 +10,63 @@ public class HelloWorld
             Console.WriteLine(i);
     }
 }
+*/
+/*
+// Patient Example  of linq
+public class LinQExample
+{
+    public static void Main(string[] args)
+    {
+        List<Patient> patients = new List<Patient>();
+        Patient patient1 = new Patient()
+        {
+            Name = "Adib",
+            Age = 5,
+        };
+        Patient patient2 = new Patient()
+        {
+            Name = "Afif",
+            Age = 1
+        };
 
+        patients.Add(patient1);
+        patients.Add(patient2);
+
+        var myPatients = from patient in patients
+                         where patient.Age > 2
+                         select patient;
+        foreach (var patient in myPatients)
+        {
+            Console.WriteLine($"The Name of patient is {patient.Name}");
+        }
+
+        Console.WriteLine("");
+        int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+        int[] numbersB = { 1, 3, 5, 7, 8 };
+        var pairs = from a in numbersA from b in numbersB where a < b select new { a, b };
+        Console.WriteLine("Pairs where a < b:");
+        foreach (var pair in pairs)
+        {
+            Console.WriteLine("{0} is less than {1}", pair.a, pair.b);
+        }
+    }
+}
+*/
+// Deferred Execution in Lin Q
+public class LinQExample
+{
+    public static void Main(string[] args)
+    {
+        int[] nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 3, 1];
+        var query = from num in nums where num > 3 select num;
+        Console.WriteLine(query);
+        foreach (int q in query)
+        {
+            Console.WriteLine(q);
+        }
+
+    }
+}
 
 /*  // Delegates and Event
 class Program
