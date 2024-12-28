@@ -11,26 +11,17 @@ public class LinQExample
     }
 }
 */
-/*
+
 // Patient Example  of linq
-public class LinQExample
+/* public class LinQExample
 {
     public static void Main(string[] args)
     {
-        List<Patient> patients = new List<Patient>();
-        Patient patient1 = new Patient()
+        List<Patient> patients = new List<Patient>
         {
-            Name = "Adib",
-            Age = 5,
+            new Patient { Name = "Adib", Age = 5 },
+            new Patient { Name = "Afif", Age = 1 }
         };
-        Patient patient2 = new Patient()
-        {
-            Name = "Afif",
-            Age = 1
-        };
-
-        patients.Add(patient1);
-        patients.Add(patient2);
 
         var myPatients = from patient in patients
                          where patient.Age > 2
@@ -50,15 +41,49 @@ public class LinQExample
             Console.WriteLine("{0} is less than {1}", pair.a, pair.b);
         }
     }
+} */
+
+public class IEnumerableVSIEnumeratro
+{
+    public static void Main(string[] args)
+    {
+        List<Patient> patients = new List<Patient>
+        {
+            new Patient { Name = "Adib", Age = 5 },
+            new Patient { Name = "Afif", Age = 1 }
+        };
+
+
+        /* foreach (var patient in patients)
+        {
+            Console.WriteLine("Name = ", patient.Name, " Age = ", patient.Age);
+        } */
+        var method = patients.GetEnumerator();
+
+        IEnumerable<Patient> IenumerablePatients = patients;
+        IEnumerator<Patient> IenumeratorPatient = patients.GetEnumerator();
+
+        foreach (var patient in IenumerablePatients)
+        {
+            Console.WriteLine($"Name = {patient.Name}, Age = {patient.Age}");
+        }
+        Console.WriteLine("IEnumerable Complite");
+
+        while (IenumeratorPatient.MoveNext())
+        {
+            Console.WriteLine(IenumeratorPatient.Current.Name);
+        }
+
+    }
 }
-*/
+
 // Deferred Execution in Lin Q
 
 /*
 LINQ queries are not executed when they are defined but when they are iterated over
 (e.g., using a foreach loop). This is called deferred execution.
 */
-public class LinQExample
+/* public class LinQExample
 {
     public static void Main(string[] args)
     {
@@ -67,15 +92,15 @@ public class LinQExample
         Console.WriteLine(query);
         foreach (int q in query)
         {
-            Console.WriteLine(q);// Query is executed here
+            Console.WriteLine(q);// Query is executed here, Deferred Execution.
         }
 
-        var queries = nums.Where(q => q > 2); // Query Executed Here. It's call Immediate Execution.
+        var queries = nums.Where(q => q > 2).ToList(); // Query Executed Here. It's call Immediate Execution.
 
         Console.WriteLine(queries);
 
     }
-}
+} */
 
 /*  // Delegates and Event
 class Program
