@@ -13,3 +13,18 @@ G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\refint\TaskStatusUpdates.dl
 G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.pdb
 G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\TaskStatusUpdates.genruntimeconfig.cache
 G:\DOTNET project\TaskStatusUpdates\obj\Debug\net8.0\ref\TaskStatusUpdates.dll
+E:\Learning\CsharpFundamentals\bin\Debug\net8.0\TaskStatusUpdates.exe
+E:\Learning\CsharpFundamentals\bin\Debug\net8.0\TaskStatusUpdates.deps.json
+E:\Learning\CsharpFundamentals\bin\Debug\net8.0\TaskStatusUpdates.runtimeconfig.json
+E:\Learning\CsharpFundamentals\bin\Debug\net8.0\TaskStatusUpdates.dll
+E:\Learning\CsharpFundamentals\bin\Debug\net8.0\TaskStatusUpdates.pdb
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.AssemblyInfoInputs.cache
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.AssemblyInfo.cs
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.csproj.CoreCompileInputs.cache
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.sourcelink.json
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.dll
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\refint\TaskStatusUpdates.dll
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.pdb
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\TaskStatusUpdates.genruntimeconfig.cache
+E:\Learning\CsharpFundamentals\obj\Debug\net8.0\ref\TaskStatusUpdates.dll

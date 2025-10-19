@@ -1,4 +1,97 @@
-﻿// Basic of linq
+﻿using System.Globalization;
+
+public class IEnumerableVSIEnumeratro
+{
+    public static void Main(string[] args)
+    {
+        //var counter = new UnsafeCounter();
+        var counter = new SafeCounter();
+        counter.IncrementManyTimes(10);   
+
+        Console.WriteLine($"Final count: {counter.Count}");
+
+    }
+    class UnsafeCounter
+    {
+        public int Count { get; private set; }
+
+        public void IncrementManyTimes(int threadCount)
+        {
+            var tasks = new Task[threadCount];
+
+            for (int i = 0; i < threadCount; i++)
+            {
+                tasks[i] = Task.Run(() =>
+                {
+                    // Each thread uses its own lock object (mistake!)
+                    object lockObj = new object();
+
+                    for (int j = 0; j < 10000; j++)
+                    {
+                        lock (lockObj)
+                        {
+                            Count++;
+                        }
+                    }
+                });
+            }
+
+            Task.WaitAll(tasks);
+        }
+    }
+    class SafeCounter
+    {
+        public int Count { get; private set; }
+        private readonly object _lock = new object();
+
+        public void IncrementManyTimes(int threadCount)
+        {
+            var tasks = new Task[threadCount];
+
+            for (int i = 0; i < threadCount; i++)
+            {
+                tasks[i] = Task.Run(() =>
+                {
+                    for (int j = 0; j < 10000; j++)
+                    {
+                        lock (_lock)
+                        {
+                            Count++;
+                        }
+                    }
+                });
+            }
+
+            Task.WaitAll(tasks);
+        }
+    }
+    // Input for AccountingToDecimal function
+    /*var a = "(35000)";
+    var b = " (35,000) ";
+    var c = 35000;
+    var d = "(3,250,000)";
+    Console.WriteLine(AccountingToDecimal(d)); // Output: -35000*/
+    /*public static decimal AccountingToDecimal(string accountingValue)
+    {
+        accountingValue = accountingValue.Trim();
+        if (string.IsNullOrEmpty(accountingValue) || accountingValue == "-")
+            return 0;
+
+        bool isNegative = accountingValue.StartsWith("(") && accountingValue.EndsWith(")");
+        string cleanValue = accountingValue
+            .Replace("(", "")
+            .Replace(")", "")   
+            .Replace(",", "")
+            .Trim();
+
+        if (!decimal.TryParse(cleanValue, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal result))
+            Console.WriteLine($"Cannot resolve the number: {accountingValue}");
+
+        return isNegative ? -result : result;
+    }*/
+}
+
+// Basic of linq
 /*
 public class LinQExample
 {
@@ -43,39 +136,6 @@ public class LinQExample
     }
 } */
 
-public class IEnumerableVSIEnumeratro
-{
-    public static void Main(string[] args)
-    {
-        List<Patient> patients = new List<Patient>
-        {
-            new Patient { Name = "Adib", Age = 5 },
-            new Patient { Name = "Afif", Age = 1 }
-        };
-
-
-        /* foreach (var patient in patients)
-        {
-            Console.WriteLine("Name = ", patient.Name, " Age = ", patient.Age);
-        } */
-        var method = patients.GetEnumerator();
-
-        IEnumerable<Patient> IenumerablePatients = patients;
-        IEnumerator<Patient> IenumeratorPatient = patients.GetEnumerator();
-
-        foreach (var patient in IenumerablePatients)
-        {
-            Console.WriteLine($"Name = {patient.Name}, Age = {patient.Age}");
-        }
-        Console.WriteLine("IEnumerable Complite");
-
-        while (IenumeratorPatient.MoveNext())
-        {
-            Console.WriteLine(IenumeratorPatient.Current.Name);
-        }
-
-    }
-}
 
 // Deferred Execution in Lin Q
 
